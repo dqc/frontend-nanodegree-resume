@@ -45,27 +45,24 @@ var education = {
 }
 
 var work = {
-  "work": [
+  "jobs": [
   {
-    "business": "Bellingham Underwriters",
-    "position": "Administration",
+    "employer": "Bellingham Underwriters",
+    "title": "Administration",
     "dates": "2013-present",
     "description": "Sed faucibus ipsum vitae massa volutpat, et pretium nisl consectetur. Aenean eu ipsum facilisis, consectetur mauris a, laoreet dui. Sed tempor arcu venenatis, euismod metus quis, viverra urna. Mauris ut rutrum purus, et vehicula sapien.",
-    "city": "Bellingham"
   },
   {
-   "business": "AAA, Washington",
-    "position": "Member Travel Services",
+   "employer": "AAA, Washington",
+    "title": "Member Travel Services",
     "dates": "2012-2013",
     "description": "Marketer, Membership (new accounts and renewals), travel agent.",
-    "city": "Bellingham" 
   },
   {
-    "business": "Center Partners",
-    "position": "Team Supervisor",
+    "employer": "Center Partners",
+    "title": "Team Supervisor",
     "dates": "2011-2012",
     "description": "Managed a team of 15-20 account specialists in a financial services market to meet project standards and goals.",
-    "city": "Liberty Lake"
   }
   ]
 }
@@ -100,9 +97,9 @@ if(bio.skills.length > 0) {
 for (job in work.jobs) {
   $("#workExperience").append(HTMLworkStart);
 
-  var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs [job].employer);
-  var formattedTitle = HTMLworkTitle.replace("%data", work.jobs [job].title);
+  var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+  var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
   var formattedEmployerTitle = formattedEmployer + formattedTitle;
 
-  $(".work-entry: last").append(formattedEmployerTitle);
+  $(".work-entry:last").append(formattedEmployerTitle);
 }
