@@ -74,7 +74,11 @@ function logClicks(x,y) {
 }
 
 $(document).click(function(loc) {
-  // your code goes here!
+  var x = loc.pageX;
+  var y = loc.pageY;
+
+  logClicks(x,y);
+
 });
 
 
@@ -129,6 +133,7 @@ function initializeMap() {
 
     return locations;
   }
+
 
   /*
   createMapMarker(placeData) reads Google Places search results to create map pins.
