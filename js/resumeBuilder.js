@@ -1,9 +1,8 @@
-
 var formattedName = HTMLheaderName.replace("%data%", "Dave Carrillo");
 
 var formattedRole = HTMLheaderRole.replace("%data%", "Front End Developer");
 
-$("#header").append(formattedName);
+$("#header").prepend(formattedName);
 $("#header").append(formattedRole);
 
 var bio = {
@@ -15,11 +14,12 @@ var bio = {
     "email": "dave@example.com",
     "github": "johndoe",
     "twitter": "@johndoe",
-    "location": "Mount Vernon"
+    "blog": "dcblogs",
+    "location": "Mount Vernon, WA"
   },
   "welcomeMessage": "Sed id justo suscipit, venenatis nisi quis, finibus risus. Duis at semper mi, in fermentum lorem.",
   "skills": [
-  "photo-bombing", "planking", "under water jump-roping", "hugs", "smiles"],
+  "HTML 5", "SEO Optimization", "CSS", "Javascript"],
   "bioPic": "images/fry.jpg"
 }
 
@@ -84,6 +84,23 @@ var projects = {
   ]
 }
 
+
+var bioPic = "images/profile2.jpg";
+var formattedbioPic = HTMLbioPic.replace("%data%", bioPic);
+$("#header").prepend(formattedbioPic);
+
+var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+$("#topContacts").append(formattedMobile);
+var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+$("#topContacts").append(formattedEmail);
+var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+$("#topContacts").append(formattedTwitter);
+var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+$("#topContacts").append(formattedGithub);
+var formattedBlog = HTMLblog.replace("%data%", bio.contacts.blog);
+$("#topContacts").append(formattedBlog);
+
+
 if(bio.skills.length > 0) {
   $("#header").append(HTMLskillsStart);
 
@@ -139,4 +156,22 @@ projects.display = function() {
     }
   }
 }
+projects.display();
+
+function inName(name) {
+  name = name.trim().split(" ");
+    console.log(name);
+    name[1] = name[1].toUpperCase();
+    name[0] = name[0].slice(0,1).toUpperCase() + 
+      name[0].slice(1).toLowerCase();
+
+    return name[0] +" "+name[1];
+  }
+
+  $("#main").append(internationalizeButton);
+
+  $("#mapDiv").append(googleMap);
+
+
+
 
