@@ -3,7 +3,7 @@ var formattedName = HTMLheaderName.replace("%data%", "Dave Carrillo");
 var formattedRole = HTMLheaderRole.replace("%data%", "Front End Developer");
 
 $("#header").prepend(formattedName);
-$("#header").append(formattedRole);
+$("#header").prepend(formattedRole);
 
 var bio = {
   "name": "Dave Carrillo",
@@ -19,7 +19,7 @@ var bio = {
   },
   "welcomeMessage": "Sed id justo suscipit, venenatis nisi quis, finibus risus. Duis at semper mi, in fermentum lorem.",
   "skills": [
-  "HTML 5", "SEO Optimization", "CSS", "Javascript"],
+  "HTML 5", "SEO Optimization", "CSS", "Javascript", "Responsive Design"],
   "bioPic": "images/fry.jpg"
 }
 
@@ -87,7 +87,7 @@ var projects = {
 
 var bioPic = "images/profile2.jpg";
 var formattedbioPic = HTMLbioPic.replace("%data%", bioPic);
-$("#header").prepend(formattedbioPic);
+$("#header").append(formattedbioPic);
 
 var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
 $("#topContacts").append(formattedMobile);
@@ -99,6 +99,8 @@ var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
 $("#topContacts").append(formattedGithub);
 var formattedBlog = HTMLblog.replace("%data%", bio.contacts.blog);
 $("#topContacts").append(formattedBlog);
+var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+$("#topContacts").append(formattedLocation);
 
 
 if(bio.skills.length > 0) {
