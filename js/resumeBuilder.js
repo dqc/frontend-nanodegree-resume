@@ -138,7 +138,7 @@ for (schools in education.schools) {
 education.display();
 
 
-function displayWork() {
+work.display = function() {
 for (job in work.jobs) {
   $("#workExperience").append(HTMLworkStart);
 
@@ -156,7 +156,7 @@ var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].
 $(".work-entry:last").append(formattedDescription);
 }
 }
-displayWork();
+work.display();
 
 projects.display = function() {
   for (project in projects.projects) {
@@ -193,7 +193,12 @@ function inName(name) {
 
   $("#main").append(internationalizeButton);
 
-  $("#mapDiv").append(googleMap);
+var map = {
+  display : function() {
+    $("#mapDiv").append(googleMap);
+  }
+}
+map.display();
 
 
 
