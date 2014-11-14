@@ -27,12 +27,12 @@ var education = {
  "schools": [
  {
     "name": "Juneau-Douglas High",
-    "city": "Juneau",
+    "location": "Juneau",
     "dates": "1992-1995"
   },
   {
     "name": "Juneau Ministry School",
-    "city": "Juneau",
+    "location": "Juneau",
     "studies": "Pastoral Studies",
     "dates": "1996-1998"
   }
@@ -118,11 +118,32 @@ if(bio.skills.length > 0) {
   $("#skills").append(formattedSkill);
 }
 
+function displayEducation() {
+for (schools in education.schools) {
+  $("#education").append(HTMLschoolStart);
+
+  var formattedName = HTMLschoolName.replace("%data%", education.schools[school].name);
+  $(".education-entry:last").append(formattedName);
+
+  var formattedStudies = HTMLschoolStudies.replace("%data%", education.schools[school].studies);
+  $(".education-entry:last").append(formattedStudies);
+
+  var formattedDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
+  $(".education-entry:last").append(formattedDates);
+
+  var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
+  $(".education-entry:last").append(formattedLocation);
+}
+}
+displayEducation()
+
+
 function displayWork() {
 for (job in work.jobs) {
   $("#workExperience").append(HTMLworkStart);
 
   var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+
   var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
   var formattedEmployerTitle = formattedEmployer + formattedTitle;
 
