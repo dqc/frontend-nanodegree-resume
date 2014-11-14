@@ -118,24 +118,24 @@ if(bio.skills.length > 0) {
   $("#skills").append(formattedSkill);
 }
 
-function displayEducation() {
+education.display = function() {
 for (schools in education.schools) {
   $("#education").append(HTMLschoolStart);
 
-  var formattedName = HTMLschoolName.replace("%data%", education.schools[school].name);
+  var formattedName = HTMLschoolName.replace("%data%", education.schools[schools].name);
   $(".education-entry:last").append(formattedName);
 
-  var formattedStudies = HTMLschoolStudies.replace("%data%", education.schools[school].studies);
+  var formattedStudies = HTMLschoolStudies.replace("%data%", education.schools[schools].studies);
   $(".education-entry:last").append(formattedStudies);
 
-  var formattedDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
+  var formattedDates = HTMLschoolDates.replace("%data%", education.schools[schools].dates);
   $(".education-entry:last").append(formattedDates);
 
-  var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
+  var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[schools].location);
   $(".education-entry:last").append(formattedLocation);
 }
 }
-displayEducation()
+education.display();
 
 
 function displayWork() {
