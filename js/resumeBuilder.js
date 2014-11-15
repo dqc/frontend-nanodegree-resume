@@ -17,7 +17,7 @@ var bio = {
     "blog": "dcblogs",
     "location": "Mount Vernon, WA"
   },
-  "welcomeMessage": "Sed id justo suscipit, venenatis nisi quis, finibus risus. Duis at semper mi, in fermentum lorem.",
+  "welcomeMessage": "I am a front end developer living in beautiful Northwest Washington",
   "skills": [
   "HTML 5", "SEO Optimization", "CSS", "Javascript", "Responsive Design"],
   "bioPic": "images/fry.jpg"
@@ -28,6 +28,7 @@ var education = {
  {
     "name": "Juneau-Douglas High",
     "location": "Juneau, AK",
+    "studies": "High School Diploma",
     "dates": "1992-1995"
   },
   {
@@ -39,8 +40,14 @@ var education = {
  ],
  "onlineCourses": [
  {
-  "title": "Javascript Crash Course",
-  "school": "Udacity",
+  "title": "Front End Nanodegree Course: HTML & CSS",
+  "school": "UDACITY",
+  "dates": "2014",
+  "url": "www.udacity.com/course/ud304-nd"
+ },
+ {
+  "title": "Front End Nanodegree Course: Javascript",
+  "school": "UDACITY",
   "dates": 2014,
   "url": "www.udacity.com/courses/ud804"
  }
@@ -53,18 +60,21 @@ var work = {
     "employer": "Bellingham Underwriters",
     "title": "Administration",
     "dates": "2013-present",
-    "description": "Sed faucibus ipsum vitae massa volutpat, et pretium nisl consectetur. Aenean eu ipsum facilisis, consectetur mauris a, laoreet dui. Sed tempor arcu venenatis, euismod metus quis, viverra urna. Mauris ut rutrum purus, et vehicula sapien.",
+    "location": "Bellingham, WA",
+    "description": "Bellingham Underwriters is an insurance management firm. We determine whether or not, and on what basis to write insurance policies in the commercial trucking market.",
   },
   {
    "employer": "AAA, Washington",
     "title": "Member Travel Services",
     "dates": "2012-2013",
+    "location": "Bellingham, WA",
     "description": "Marketer, Membership (new accounts and renewals), travel agent.",
   },
   {
     "employer": "Center Partners",
     "title": "Team Supervisor",
     "dates": "2011-2012",
+    "location": "Post Falls, ID",
     "description": "Managed a team of 15-20 account specialists in a financial services market to meet project standards and goals.",
   }
   ]
@@ -73,16 +83,19 @@ var work = {
 var projects = {
   "projects": [
   {
-    "title": "Sample Project 1",
+    "title": "Portfolio",
     "dates": "2014",
-    "description": "Sed hendrerit nibh rutrum turpis convallis, sed pulvinar ipsum varius. Ut porttitor mollis pretium. Morbi viverra orci maximus, vehicula urna sit amet, euismod eros. Nulla velit magna, ultricies non consectetur rutrum, pharetra sed dui.",
+    "description": "This was the first of several projects from Udacity's Front End course. The challenge was to create a portfolio page based on a mockup we were given. It also included a few modals with descriptions.",
     "images": [
       "http://lorempixel.com/400/200/business/1",
-      "http://lorempixel.com/400/200/business/8"
     ]
   }
   ]
 }
+
+
+var welcomeMessage = HTMLWelcomeMsg.replace("%data%", bio.welcomeMessage);
+$("#header").append(welcomeMessage);
 
 
 var bioPic = "images/profile2.jpg";
@@ -101,10 +114,6 @@ var formattedBlog = HTMLblog.replace("%data%", bio.contacts.blog);
 $("#topContacts").append(formattedBlog);
 var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 $("#topContacts").append(formattedLocation);
-
-var welcomeMessage = HTMLWelcomeMsg.replace("%data%", bio.welcomeMessage[welcomeMessage]);
-$("#welcome").append(welcomeMessage);
-
 
 if(bio.skills.length > 0) {
   $("#header").append(HTMLskillsStart);
@@ -171,6 +180,9 @@ for (job in work.jobs) {
 
 var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
 $(".work-entry:last").append(formattedDates);
+
+var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+$(".work-entry:last").append(formattedLocation);
 
 var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
 $(".work-entry:last").append(formattedDescription);
