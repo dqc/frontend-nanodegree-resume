@@ -27,12 +27,12 @@ var education = {
  "schools": [
  {
     "name": "Juneau-Douglas High",
-    "location": "Juneau",
+    "location": "Juneau, AK",
     "dates": "1992-1995"
   },
   {
     "name": "Juneau Ministry School",
-    "location": "Juneau",
+    "location": "Juneau, AK",
     "studies": "Pastoral Studies",
     "dates": "1996-1998"
   }
@@ -133,6 +133,23 @@ for (schools in education.schools) {
 
   var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[schools].location);
   $(".education-entry:last").append(formattedLocation);
+}
+
+for (onlineCourses in education.onlineCourses) {
+  $("#education").append(HTMLonlineClasses);
+  $("#education").append(HTMLschoolStart);
+
+    var formattedTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[onlineCourses].title);
+    $(".education-entry:last").append(formattedTitle);
+
+    var formattedSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[onlineCourses].school);
+    $(".education-entry:last").prepend(formattedSchool);
+
+    var formattedDates = HTMLonlineDates.replace("%data%", education.onlineCourses[onlineCourses].dates);
+    $(".education-entry:last").append(formattedDates);
+
+    var formattedUrl = HTMLonlineURL.replace("%data%", education.onlineCourses[onlineCourses].url);
+    $(".education-entry:last").append(formattedUrl);
 }
 }
 education.display();
