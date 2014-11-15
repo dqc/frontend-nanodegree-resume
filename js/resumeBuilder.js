@@ -1,10 +1,3 @@
-var formattedName = HTMLheaderName.replace("%data%", "Dave Carrillo");
-
-var formattedRole = HTMLheaderRole.replace("%data%", "Front End Developer");
-
-$("#header").prepend(formattedName);
-$("#header").prepend(formattedRole);
-
 var bio = {
   "name": "Dave Carrillo",
   "role": "FRONT END DEVELOPER",
@@ -22,6 +15,53 @@ var bio = {
   "HTML 5", "SEO Optimization", "CSS", "Javascript", "Responsive Design"],
   "bioPic": "images/fry.jpg"
 }
+
+//header
+var formattedName = HTMLheaderName.replace("%data%", "Dave Carrillo");
+var formattedRole = HTMLheaderRole.replace("%data%", "Front End Developer");
+$("#header").prepend(formattedName);
+$("#header").prepend(formattedRole);
+var bioPic = "images/profile2.jpg";
+var formattedbioPic = HTMLbioPic.replace("%data%", bioPic);
+$("#header").append(formattedbioPic);
+
+//contact
+var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+$("#topContacts").append(formattedMobile);
+$("#footerContacts").append(formattedMobile);
+var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+$("#topContacts").append(formattedEmail);
+$("#footerContacts").append(formattedEmail);
+var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+$("#topContacts").append(formattedTwitter);
+$("#footerContacts").append(formattedTwitter);
+var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+$("#topContacts").append(formattedGithub);
+$("#footerContacts").append(formattedGithub);
+var formattedBlog = HTMLblog.replace("%data%", bio.contacts.blog);
+$("#topContacts").append(formattedBlog);
+$("#footerContacts").append(formattedBlog);
+var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+$("#footerContacts").append(formattedLocation);
+
+//skills
+if(bio.skills.length > 0) {
+  $("#header").append(HTMLskillsStart);
+  var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
+  $("#skills").append(formattedSkill);
+  formattedSkill = HTMLskills.replace("%data%",bio.skills[1]);
+  $("#skills").append(formattedSkill);
+  formattedSkill = HTMLskills.replace("%data%",bio.skills[2]);
+  $("#skills").append(formattedSkill);
+  formattedSkill = HTMLskills.replace("%data%",bio.skills[3]);
+  $("#skills").append(formattedSkill);
+  formattedSkill = HTMLskills.replace("%data%",bio.skills[4]);
+  $("#skills").append(formattedSkill);
+}
+
+//welcome message
+var welcomeMessage = HTMLWelcomeMsg.replace("%data%", bio.welcomeMessage);
+$("#header").append(welcomeMessage);
 
 var education = {
  "schools": [
@@ -54,87 +94,7 @@ var education = {
  ]
 }
 
-var work = {
-  "jobs": [
-  {
-    "employer": "Bellingham Underwriters",
-    "title": "Administration",
-    "dates": "2013-present",
-    "location": "Bellingham, WA",
-    "description": "Bellingham Underwriters is an insurance management firm. We determine whether or not, and on what basis to write insurance policies in the commercial trucking market.",
-  },
-  {
-   "employer": "AAA, Washington",
-    "title": "Member Travel Services",
-    "dates": "2012-2013",
-    "location": "Bellingham, WA",
-    "description": "Marketer, Membership (new accounts and renewals), travel agent.",
-  },
-  {
-    "employer": "Center Partners",
-    "title": "Team Supervisor",
-    "dates": "2011-2012",
-    "location": "Post Falls, ID",
-    "description": "Managed a team of 15-20 account specialists in a financial services market to meet project standards and goals.",
-  }
-  ]
-}
-
-var projects = {
-  "projects": [
-  {
-    "title": "Portfolio",
-    "dates": "2014",
-    "description": "This was the first of several projects from Udacity's Front End course. The challenge was to create a portfolio page based on a mockup we were given. It also included a few modals with descriptions.",
-    "images": [
-      "http://lorempixel.com/400/200/business/1",
-    ]
-  }
-  ]
-}
-
-
-var welcomeMessage = HTMLWelcomeMsg.replace("%data%", bio.welcomeMessage);
-$("#header").append(welcomeMessage);
-
-
-var bioPic = "images/profile2.jpg";
-var formattedbioPic = HTMLbioPic.replace("%data%", bioPic);
-$("#header").append(formattedbioPic);
-
-var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-$("#topContacts").append(formattedMobile);
-$("#footerContacts").append(formattedMobile);
-var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-$("#topContacts").append(formattedEmail);
-$("#footerContacts").append(formattedEmail);
-var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
-$("#topContacts").append(formattedTwitter);
-$("#footerContacts").append(formattedTwitter);
-var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-$("#topContacts").append(formattedGithub);
-$("#footerContacts").append(formattedGithub);
-var formattedBlog = HTMLblog.replace("%data%", bio.contacts.blog);
-$("#topContacts").append(formattedBlog);
-$("#footerContacts").append(formattedBlog);
-var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-$("#footerContacts").append(formattedLocation);
-
-if(bio.skills.length > 0) {
-  $("#header").append(HTMLskillsStart);
-
-  var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
-  $("#skills").append(formattedSkill);
-  formattedSkill = HTMLskills.replace("%data%",bio.skills[1]);
-  $("#skills").append(formattedSkill);
-  formattedSkill = HTMLskills.replace("%data%",bio.skills[2]);
-  $("#skills").append(formattedSkill);
-  formattedSkill = HTMLskills.replace("%data%",bio.skills[3]);
-  $("#skills").append(formattedSkill);
-  formattedSkill = HTMLskills.replace("%data%",bio.skills[4]);
-  $("#skills").append(formattedSkill);
-}
-
+//education
 education.display = function() {
 for (schools in education.schools) {
   $("#education").append(HTMLschoolStart);
@@ -171,7 +131,33 @@ for (onlineCourses in education.onlineCourses) {
 }
 education.display();
 
+var work = {
+  "jobs": [
+  {
+    "employer": "Bellingham Underwriters",
+    "title": "Administration",
+    "dates": "2013-present",
+    "location": "Bellingham, WA",
+    "description": "Bellingham Underwriters is an insurance management firm. We determine whether or not, and on what basis to write insurance policies in the commercial trucking market.",
+  },
+  {
+   "employer": "AAA, Washington",
+    "title": "Member Travel Services",
+    "dates": "2012-2013",
+    "location": "Bellingham, WA",
+    "description": "Marketer, Membership (new accounts and renewals), travel agent.",
+  },
+  {
+    "employer": "Center Partners",
+    "title": "Team Supervisor",
+    "dates": "2011-2012",
+    "location": "Post Falls, ID",
+    "description": "Managed a team of 15-20 account specialists in a financial services market to meet project standards and goals.",
+  }
+  ]
+}
 
+//work
 work.display = function() {
 for (job in work.jobs) {
   $("#workExperience").append(HTMLworkStart);
@@ -195,6 +181,20 @@ $(".work-entry:last").append(formattedDescription);
 }
 work.display();
 
+var projects = {
+  "projects": [
+  {
+    "title": "Portfolio",
+    "dates": "2014",
+    "description": "This was the first of several projects from Udacity's Front End course. The challenge was to create a portfolio page based on a mockup we were given. It also included a few modals with descriptions.",
+    "images": [
+      "http://lorempixel.com/400/200/business/1",
+    ]
+  }
+  ]
+}
+
+//projects
 projects.display = function() {
   for (project in projects.projects) {
     $("#projects").append(HTMLprojectStart);
@@ -228,7 +228,7 @@ function inName(name) {
     return name[0] +" "+name[1];
   }
 
-  $("#main").append(internationalizeButton);
+$("#main").append(internationalizeButton);
 
 var map = {
   display : function() {
