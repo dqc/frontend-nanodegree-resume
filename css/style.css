@@ -48,6 +48,10 @@ h2, h3, h4, h5 {
   padding-right: 5%;
 }
 
+a {
+  color: #73ae08 !important;
+}
+
 
 .date-text {
   font-style: italic;
@@ -73,10 +77,19 @@ p {
 }
 
 a {
-  color: #1199C3;
+  color: #231f20 !important;
   text-decoration: none;
   margin-top: 10px;
   display: block;
+  font-weight: bold;
+  -webkit-transition: color 0.3s ease-in-out;
+  -moz-transition: color 0.3s ease-in-out;
+  -o-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+  color: #73ae08 !important;
 }
 
 .welcome-message {
@@ -87,7 +100,7 @@ a {
 }
 
 #skillsH3 {
-  color: #F5AE23;
+  color: #73ae08;
   display: none;
 }
 
@@ -100,12 +113,13 @@ a {
 }
 
 .orange-text {
-  color: #F5AE23;
+  color: #73ae08;
+  font-weight: bold;
 }
 
 .white-text {
   font-weight: bold;
-  color: #FFFFFF;
+  color: #231f20;
 }
 
 .gray {
@@ -120,7 +134,12 @@ a {
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  background-color: #fff;
+  color: #231f20;
+}
+
+#name {
+  color: #231f20;
 }
 
 .flex-box {
@@ -146,6 +165,9 @@ ul {
   padding: 10px;
   width: 200px;
   display: none;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  -o-border-radius: 25px;
 }
 
 img {

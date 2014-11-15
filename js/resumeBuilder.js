@@ -7,13 +7,13 @@ $("#header").prepend(formattedRole);
 
 var bio = {
   "name": "Dave Carrillo",
-  "role": "Front End Developer",
+  "role": "FRONT END DEVELOPER",
   "contacts": {
     "email": "dqcrevive@gmail.com",
-    "mobile": "857-6309",
-    "email": "dave@example.com",
-    "github": "johndoe",
-    "twitter": "@johndoe",
+    "mobile": "867-5309",
+    "email": "ddqcrevive@egmail.com",
+    "github": "www.github.com/dqc",
+    "twitter": "@daaavec",
     "blog": "dcblogs",
     "location": "Mount Vernon, WA"
   },
@@ -101,6 +101,9 @@ var formattedBlog = HTMLblog.replace("%data%", bio.contacts.blog);
 $("#topContacts").append(formattedBlog);
 var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 $("#topContacts").append(formattedLocation);
+
+var welcomeMessage = HTMLWelcomeMsg.replace("%data%", bio.welcomeMessage[welcomeMessage]);
+$("#welcome").append(welcomeMessage);
 
 
 if(bio.skills.length > 0) {
