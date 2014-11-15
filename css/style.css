@@ -161,13 +161,14 @@ ul {
   padding: 10px;
   width: 200px;
   display: none;
-  -webkit-border-radius: 25px;
-  -moz-border-radius: 25px;
-  -o-border-radius: 25px;
 }
 
 img {
   padding: 10px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -o-border-radius: 20px;
+  border-radius: 20px;
 }
 
 
@@ -189,6 +190,10 @@ span {
 
 #letsConnect {
   text-align: center;
+}
+
+#footerContacts {
+  background-color: white;
 }
 
 @media only screen and (max-width: 1024px) {

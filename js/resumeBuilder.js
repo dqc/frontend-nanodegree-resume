@@ -17,7 +17,7 @@ var bio = {
     "blog": "dcblogs",
     "location": "Mount Vernon, WA"
   },
-  "welcomeMessage": "I am a front end developer living in beautiful Northwest Washington",
+  "welcomeMessage": "Hello! I am a front end developer living in beautiful Northwest Washington",
   "skills": [
   "HTML 5", "SEO Optimization", "CSS", "Javascript", "Responsive Design"],
   "bioPic": "images/fry.jpg"
@@ -104,16 +104,21 @@ $("#header").append(formattedbioPic);
 
 var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
 $("#topContacts").append(formattedMobile);
+$("#footerContacts").append(formattedMobile);
 var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
 $("#topContacts").append(formattedEmail);
+$("#footerContacts").append(formattedEmail);
 var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
 $("#topContacts").append(formattedTwitter);
+$("#footerContacts").append(formattedTwitter);
 var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
 $("#topContacts").append(formattedGithub);
+$("#footerContacts").append(formattedGithub);
 var formattedBlog = HTMLblog.replace("%data%", bio.contacts.blog);
 $("#topContacts").append(formattedBlog);
+$("#footerContacts").append(formattedBlog);
 var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-$("#topContacts").append(formattedLocation);
+$("#footerContacts").append(formattedLocation);
 
 if(bio.skills.length > 0) {
   $("#header").append(HTMLskillsStart);
@@ -231,6 +236,8 @@ var map = {
   }
 }
 map.display();
+
+
 
 
 
