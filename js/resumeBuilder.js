@@ -4,7 +4,7 @@ var bio = {
   "contacts": {
     "email": "dqcrevive@gmail.com",
     "mobile": "867-5309",
-    "email": "ddqcrevive@egmail.com",
+    "email": "dqcrevive@egmail.com",
     "github": "www.github.com/dqc",
     "twitter": "@daaavec",
     "blog": "dcblogs",
