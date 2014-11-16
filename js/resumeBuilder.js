@@ -188,7 +188,7 @@ var projects = {
     "dates": "2014",
     "description": "This was the first of several projects from Udacity's Front End course. The challenge was to create a portfolio page based on a mockup we were given. It also included a few modals with descriptions.",
     "images": [
-      "http://lorempixel.com/400/200/business/1",
+      "images/study.jpg",
     ]
   }
   ]
