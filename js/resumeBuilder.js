@@ -2,13 +2,11 @@ var bio = {
   "name": "Dave Carrillo",
   "role": "FRONT END DEVELOPER",
   "contacts": {
-    "email": "dqcrevive@gmail.com",
-    "mobile": "867-5309",
-    "email": "dqcrevive@egmail.com",
-    "github": "www.github.com/dqc",
-    "twitter": "@daaavec",
-    "blog": "dcblogs",
-    "location": "Mount Vernon, WA"
+    "linkedIn": "<a href='https://www.linkedin.com/in/dqcarrillo'>dqcarrillo</a>",
+    "email": "<a href='mailto:dqcrevive@egmail.com'>dqcrevive</a>",
+    "github": "<a href='https://github.com/dqc'>github/dqc</a>",
+    "twitter": "<a href='https://twitter.com/DaaaveC'>@daaavec</a>",
+    "location": "<a href='http://en.wikipedia.org/wiki/Mount_Vernon,_Washington'>Mount Vernon, WA</a>"
   },
   "welcomeMessage": "Hello! I am a front end developer living in beautiful Northwest Washington",
   "skills": [
@@ -17,6 +15,8 @@ var bio = {
 }
 
 //header
+$("#main").addClass("animated bounce");
+
 var formattedName = HTMLheaderName.replace("%data%", "Dave Carrillo");
 var formattedRole = HTMLheaderRole.replace("%data%", "Front End Developer");
 $("#header").prepend(formattedName);
@@ -26,9 +26,9 @@ var formattedbioPic = HTMLbioPic.replace("%data%", bioPic);
 $("#header").append(formattedbioPic);
 
 //contact
-var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-$("#topContacts").append(formattedMobile);
-$("#footerContacts").append(formattedMobile);
+var formattedLinkedIn = HTMLlinkedIn.replace("%data%", bio.contacts.linkedIn);
+$("#topContacts").append(formattedLinkedIn);
+$("#footerContacts").append(formattedLinkedIn);
 var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
 $("#topContacts").append(formattedEmail);
 $("#footerContacts").append(formattedEmail);
@@ -38,11 +38,9 @@ $("#footerContacts").append(formattedTwitter);
 var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
 $("#topContacts").append(formattedGithub);
 $("#footerContacts").append(formattedGithub);
-var formattedBlog = HTMLblog.replace("%data%", bio.contacts.blog);
-$("#topContacts").append(formattedBlog);
-$("#footerContacts").append(formattedBlog);
 var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 $("#footerContacts").append(formattedLocation);
+$("#topContacts").append(formattedLocation);
 
 //skills
 if(bio.skills.length > 0) {

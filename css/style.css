@@ -77,14 +77,14 @@ a {
   margin-top: 10px;
   display: block;
   font-weight: bold;
-  -webkit-transition: color 0.3s ease-in-out;
-  -moz-transition: color 0.3s ease-in-out;
-  -o-transition: color 0.3s ease-in-out;
-  transition: color 0.3s ease-in-out;
+  -webkit-transition: text-decoration 0.2s ease-in;
+  -moz-transition: text-decoration 0.2s ease-in;
+  -o-transition: text-decoration 0.2s ease-in;
+  transition: text-decoration 0.2s ease-in;
 }
 
 a:hover {
-  color: #73ae08;
+  text-decoration: underline;
 }
 
 .welcome-message {
